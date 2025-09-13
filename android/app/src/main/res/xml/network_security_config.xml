@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">payu.in</domain>
+        <domain includeSubdomains="true">payumoney.com</domain>
+        <domain includeSubdomains="true">cbjs.payu.in</domain>
+        <domain includeSubdomains="true">secure.payu.in</domain>
+        <domain includeSubdomains="true">test.payu.in</domain>
+    </domain-config>
+</network-security-config>
