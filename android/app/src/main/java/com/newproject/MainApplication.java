@@ -1,4 +1,4 @@
-package com.example;
+package com.newproject;
 
 import android.app.Application;
 
@@ -11,6 +11,7 @@ import com.payubiz.PayUBizSdkPackage;
 
 import java.util.Arrays;
 import java.util.List;
+import com.newproject.BuildConfig;
 
 public class MainApplication extends Application implements ReactApplication {
 

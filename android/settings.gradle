@@ -1,7 +1,6 @@
 rootProject.name = 'example'
+//include ':payu-core-pg-react'
+//project(':payu-core-pg-react').projectDir = new File(rootProject.projectDir, '../node_modules/payu-core-pg-react/android')
 include ':payu-non-seam-less-react'
 project(':payu-non-seam-less-react').projectDir = new File(rootProject.projectDir, '../node_modules/payu-non-seam-less-react/android')
-// include ':payu-core-pg-react'
-// project(':payu-core-pg-react').projectDir = new File(rootProject.projectDir, '../node_modules/payu-core-pg-react/android')
-
 include ':app'

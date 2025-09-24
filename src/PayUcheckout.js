@@ -13,7 +13,7 @@ import { ToastAndroid } from 'react-native';
      const [amount, setAmount] = useState("1000");
      const [productInfo, setProductInfo] = useState('test1');
      const [firstName, setFirstName] = useState('test');
-     const [email, setEmail] = useState('jjj@goodz.in');
+     const [email, setEmail] = useState('abc@goodz.in');
      const [phone, setPhone] = useState('7702302357');
      const [ios_surl, setIosSurl] = useState('https://www.goodz.in');
      const [ios_furl, setIosFurl] = useState('https://www.goodz.in');
@@ -142,7 +142,7 @@ import { ToastAndroid } from 'react-native';
      }
         
      onPaymentFailure = (e) => {
-         console.log(e);
+         console.log(e,"Payment failed");
          console.log(e.merchantResponse);
          console.log(e.payuResponse);
          displayAlert('onPaymentFailure', JSON.stringify(e));
@@ -160,7 +160,7 @@ import { ToastAndroid } from 'react-native';
          displayAlert('onPaymentCancel', JSON.stringify(e));
      }
      onError = (e) => {
-         console.log(e);
+         console.log(e,"Error message");
          displayAlert('onError', JSON.stringify(e));
      }
     generateHash = (e) => {
@@ -221,7 +221,6 @@ import { ToastAndroid } from 'react-native';
              surePayCount: surePayCount,
              merchantResponseTimeout: merchantResponseTimeout,
              autoSelectOtp: autoSelectOtp,
-             // Android specific property
              autoApprove: autoApprove,
              merchantSMSPermission: merchantSMSPermission,
              showCbToolbar: showCbToolbar,
@@ -261,7 +260,8 @@ import { ToastAndroid } from 'react-native';
 
     const startTransaction = async () => { try {
          // Step 1: Build payload (frontend params only) 
-         const requestPayload = buildPayload( "5558", firstName, email, phone, productInfo, amount, android_surl, android_furl, ); 
+         var txnid = new Date().getTime().toString();
+         const requestPayload = buildPayload( txnid, firstName, email, phone, productInfo, amount, android_surl, android_furl, ); 
          // Step 2: Call backend API 
          const data = await fetchPayUDetails(requestPayload); 
          if (data?.data) { 
@@ -280,7 +280,7 @@ import { ToastAndroid } from 'react-native';
                     android_surl: android_surl,
                     android_furl: android_furl,
                     udf1: data.data.udf1,
-                     hash: data.data.hash,
+                    hash: data.data.hash,
                     environment: environment, 
                     userCredential: userCredential,}; 
              console.log("Payment Params:", payUPaymentParams);

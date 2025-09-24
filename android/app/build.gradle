@@ -110,7 +110,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example"
+        applicationId "com.newproject"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -165,8 +165,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
-    implementation project(':payu-non-seam-less-react')
     //implementation project(':payu-core-pg-react')
+    implementation project(':payu-non-seam-less-react')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation ("com.facebook.react:react-native:+") {
